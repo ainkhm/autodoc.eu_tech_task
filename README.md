@@ -11,9 +11,13 @@ This is a Autodoc.eu test app build with React 18, TypeScript, and Testing Libra
 
 This project uses many tools like:
 
-- [ReactJS](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org)
+- [ReactJS](https://reactjs.org)
+- [React Context](https://legacy.reactjs.org/docs/context.html)
+- [React Router](https://reactrouter.com/en/main)
+- [GraphQL](https://graphql.org/)
 - [Apollo](https://www.apollographql.com/)
+- [Rick&Morty API](https://rickandmortyapi.com/documentation)
 - [Testing Library](https://testing-library.com)
 - [Eslint](https://eslint.org)
 - [Prettier](https://prettier.io)
