@@ -1,20 +1,21 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import { Loading } from "./Loading.component";
+import { render } from '@testing-library/react'
+import React from 'react'
 
-describe("Loading Component", () => {
-  it("renders the loading message", () => {
-    const { getByText } = render(<Loading />);
+import '@testing-library/jest-dom/extend-expect'
+import { Loading } from './Loading.component'
 
-    const loadingMessage = getByText("Loading data from the server...");
-    expect(loadingMessage).toBeInTheDocument();
-  });
+describe('Loading Component', () => {
+  it('renders the loading message', () => {
+    const { getByText } = render(<Loading />)
 
-  it("renders the Sentry loader", () => {
-    const { container } = render(<Loading />);
+    const loadingMessage = getByText('Loading data from the server...')
+    expect(loadingMessage).toBeInTheDocument()
+  })
 
-    const sentryLoader = container.querySelector(".Sentry");
-    expect(sentryLoader).toBeInTheDocument();
-  });
-});
+  it('renders the Sentry loader', () => {
+    const { container } = render(<Loading />)
+
+    const sentryLoader = container.querySelector('.Sentry')
+    expect(sentryLoader).toBeInTheDocument()
+  })
+})

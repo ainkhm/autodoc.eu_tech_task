@@ -1,5 +1,6 @@
-import { useQuery, gql } from '@apollo/client';
-import { APIArgs } from '../interfaces/FilterCharacter.interface';
+import { useQuery, gql } from '@apollo/client'
+
+import { APIArgs } from '../interfaces/FilterCharacter.interface'
 
 const GET_CHARACTERS = gql`
   query GetCharacters($page: Int, $filters: FilterCharacter) {
@@ -17,9 +18,9 @@ const GET_CHARACTERS = gql`
       }
     }
   }
-`;
+`
 
 export const useCharacters = ({ page, filters }: APIArgs) => {
-  const { error, loading, data } = useQuery(GET_CHARACTERS, { variables: { page, filters } });
-  return { error, loading, data };
-};
+  const { error, loading, data } = useQuery(GET_CHARACTERS, { variables: { page, filters } })
+  return { error, loading, data }
+}

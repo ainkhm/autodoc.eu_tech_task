@@ -1,12 +1,13 @@
-import { Episode } from '../../interfaces/Character.interface';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import './HorizontalSlider.component.css';
+import Slider from 'react-slick'
+
+import { Episode } from '../../interfaces/Character.interface'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import './HorizontalSlider.component.css'
 
 interface Props {
-  episodes: Episode[];
-  isMobileScreen: boolean;
+  episodes: Episode[]
+  isMobileScreen: boolean
 }
 
 export const HorizontalSlider = ({ episodes, isMobileScreen }: Props) => {
@@ -47,18 +48,18 @@ export const HorizontalSlider = ({ episodes, isMobileScreen }: Props) => {
         },
       },
     ],
-  };
+  }
 
   return (
     <div className={isMobileScreen ? 'episode-container-mobile' : 'episode-container-desktop'}>
       <Slider {...settings}>
         {episodes.map((episode) => (
-          <div key={episode.id} className="episode">
-            <h3 className="episode-title">{episode.name}</h3>
-            <p className="episode-date">{episode.air_date}</p>
+          <div key={episode.id} className='episode'>
+            <h3 className='episode-title'>{episode.name}</h3>
+            <p className='episode-date'>{episode.air_date}</p>
           </div>
         ))}
       </Slider>
     </div>
-  );
-};
+  )
+}

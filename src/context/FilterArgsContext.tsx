@@ -1,16 +1,18 @@
-import { createContext, useReducer } from 'react';
-import { FilterCharacter, PaginationInfo } from '../interfaces/FilterCharacter.interface';
-import { FilterArgsReducer, FilterArgsState } from './FilterArgsReducer';
+import { createContext, useReducer } from 'react'
+
+import { FilterArgsReducer, FilterArgsState } from './FilterArgsReducer'
+
+import { FilterCharacter, PaginationInfo } from '../interfaces/FilterCharacter.interface'
 
 type FilterArgsContextProps = {
-  page: number | null;
-  paginationInfo: PaginationInfo;
-  filters: FilterCharacter;
-  filter: ({ name, status, gender }: FilterCharacter) => void;
-  resetFilters: () => void;
-  updatePage: (page: number) => void;
-  updatePaginationInfo: ({ count, next, prev, pages }: PaginationInfo) => void;
-};
+  page: number | null
+  paginationInfo: PaginationInfo
+  filters: FilterCharacter
+  filter: ({ name, status, gender }: FilterCharacter) => void
+  resetFilters: () => void
+  updatePage: (page: number) => void
+  updatePaginationInfo: ({ count, next, prev, pages }: PaginationInfo) => void
+}
 
 const FilterArgsContextInitialState: FilterArgsState = {
   page: 1,
@@ -25,33 +27,33 @@ const FilterArgsContextInitialState: FilterArgsState = {
     status: '',
     gender: '',
   },
-};
+}
 
-export const FilterArgsContext = createContext({} as FilterArgsContextProps);
+export const FilterArgsContext = createContext({} as FilterArgsContextProps)
 
 export const FilterArgsContextProvider = ({ children }: any) => {
-  const [state, dispatch] = useReducer(FilterArgsReducer, FilterArgsContextInitialState);
+  const [state, dispatch] = useReducer(FilterArgsReducer, FilterArgsContextInitialState)
 
   const filter = ({ name, status, gender }: FilterCharacter) => {
-    updatePage(1);
-    dispatch({ type: 'filter', payload: { filters: { name, status, gender } } });
-  };
+    updatePage(1)
+    dispatch({ type: 'filter', payload: { filters: { name, status, gender } } })
+  }
 
   const resetFilters = () => {
-    updatePage(1);
-    dispatch({ type: 'resetFilters' });
-  };
+    updatePage(1)
+    dispatch({ type: 'resetFilters' })
+  }
 
   const updatePage = (page: number) => {
-    dispatch({ type: 'updatePage', payload: { page } });
-  };
+    dispatch({ type: 'updatePage', payload: { page } })
+  }
 
   const updatePaginationInfo = ({ count, next, prev, pages }: PaginationInfo) => {
     dispatch({
       type: 'updatePaginationInfo',
       payload: { paginationInfo: { count, next, prev, pages } },
-    });
-  };
+    })
+  }
 
   return (
     <FilterArgsContext.Provider
@@ -59,5 +61,5 @@ export const FilterArgsContextProvider = ({ children }: any) => {
     >
       {children}
     </FilterArgsContext.Provider>
-  );
-};
+  )
+}

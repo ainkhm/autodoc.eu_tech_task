@@ -1,26 +1,26 @@
-import styled from 'styled-components';
-import { rem } from 'polished';
+import { rem } from 'polished'
+import styled from 'styled-components'
 
 export const StyledContainer = styled.div`
-	padding: ${rem(20)};
-	font-family: 'Inter';
-	max-width: ${rem(700)};
-	margin: auto;
-`;
+  padding: ${rem(20)};
+  font-family: 'Inter';
+  max-width: ${rem(700)};
+  margin: auto;
+`
 
 export const StyledLogo = styled.img`
-	width: ${rem(80)};
-	height: ${rem(80)};
-	background-color: #000;
-`;
+  width: ${rem(80)};
+  height: ${rem(80)};
+  background-color: #000;
+`
 
 export const StyledTitle = styled.h1`
-	color: #0a5beb;
-	font-family: 'Poppins';
-`;
+  color: #0a5beb;
+  font-family: 'Poppins';
+`
 
 export const StyledCode = styled.code`
-	padding: ${`${rem(5)} ${rem(10)} `};
-	background-color: #f6f8fa;
-	font-weight: bold;
-`;
+  padding: ${`${rem(5)} ${rem(10)} `};
+  background-color: #f6f8fa;
+  font-weight: bold;
+`

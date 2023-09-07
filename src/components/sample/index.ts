@@ -1,3 +1,3 @@
-import Sample from './sample';
+import Sample from './sample'
 
-export default Sample;
+export default Sample

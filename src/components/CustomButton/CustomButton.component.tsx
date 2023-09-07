@@ -1,13 +1,14 @@
-import { useContext } from 'react';
-import { FilterArgsContext } from '../../context/FilterArgsContext';
-import { formInitialState } from '../NavBar/NavBar.component';
-import { ImCross, ImFilter } from 'react-icons/im';
+import { useContext } from 'react'
+import { ImCross, ImFilter } from 'react-icons/im'
+
+import { FilterArgsContext } from '../../context/FilterArgsContext'
+import { formInitialState } from '../NavBar/NavBar.component'
 
 interface Props {
-  isFiltered: boolean;
-  setModalIsOpen?: any;
-  setIsFiltered?: any;
-  setFormFilters?: any;
+  isFiltered: boolean
+  setModalIsOpen?: any
+  setIsFiltered?: any
+  setFormFilters?: any
 }
 
 export const CustomButton = ({
@@ -16,26 +17,26 @@ export const CustomButton = ({
   setIsFiltered,
   setFormFilters,
 }: Props) => {
-  const { resetFilters } = useContext(FilterArgsContext);
+  const { resetFilters } = useContext(FilterArgsContext)
 
   const clearFilters = () => {
-    resetFilters();
-    setIsFiltered(false);
-    setFormFilters(formInitialState);
-  };
+    resetFilters()
+    setIsFiltered(false)
+    setFormFilters(formInitialState)
+  }
 
   return (
     <div>
       {!isFiltered && (
-        <button className="btn" onClick={() => setModalIsOpen(true)}>
-          <ImFilter className="icon" />
+        <button className='btn' onClick={() => setModalIsOpen(true)}>
+          <ImFilter className='icon' />
         </button>
       )}
       {isFiltered && (
-        <button className="btn" onClick={clearFilters}>
-          <ImCross className="delete-icon" />
+        <button className='btn' onClick={clearFilters}>
+          <ImCross className='delete-icon' />
         </button>
       )}
     </div>
-  );
-};
+  )
+}

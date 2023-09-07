@@ -1,35 +1,35 @@
-import { FilterCharacter, PaginationInfo } from '../interfaces/FilterCharacter.interface';
+import { FilterCharacter, PaginationInfo } from '../interfaces/FilterCharacter.interface'
 
 export interface FilterArgsState {
-  page: number | null;
-  paginationInfo: PaginationInfo;
-  filters: FilterCharacter;
+  page: number | null
+  paginationInfo: PaginationInfo
+  filters: FilterCharacter
 }
 
 type FilterArgsAction =
   | { type: 'filter'; payload: { filters: FilterCharacter } }
   | { type: 'resetFilters' }
   | { type: 'updatePage'; payload: { page: number } }
-  | { type: 'updatePaginationInfo'; payload: { paginationInfo: PaginationInfo } };
+  | { type: 'updatePaginationInfo'; payload: { paginationInfo: PaginationInfo } }
 
 export const FilterArgsReducer = (
   state: FilterArgsState,
-  action: FilterArgsAction
+  action: FilterArgsAction,
 ): FilterArgsState => {
   switch (action.type) {
     case 'filter':
-      return { ...state, filters: action.payload.filters };
+      return { ...state, filters: action.payload.filters }
 
     case 'resetFilters':
-      return { ...state, filters: { name: '', status: '', gender: '' } };
+      return { ...state, filters: { name: '', status: '', gender: '' } }
 
     case 'updatePage':
-      return { ...state, page: action.payload.page };
+      return { ...state, page: action.payload.page }
 
     case 'updatePaginationInfo':
-      return { ...state, paginationInfo: action.payload.paginationInfo };
+      return { ...state, paginationInfo: action.payload.paginationInfo }
 
     default:
-      return state;
+      return state
   }
-};
+}

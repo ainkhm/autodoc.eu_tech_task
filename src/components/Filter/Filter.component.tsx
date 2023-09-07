@@ -1,16 +1,17 @@
-import { useContext } from 'react';
-import { FilterArgsContext } from '../../context/FilterArgsContext';
-import { FilterButton } from '../FilterButton/FilterButton.component';
-import Select from 'react-select';
-import './Filter.component.css';
+import { useContext } from 'react'
+import Select from 'react-select'
+
+import { FilterArgsContext } from '../../context/FilterArgsContext'
+import { FilterButton } from '../FilterButton/FilterButton.component'
+import './Filter.component.css'
 
 interface Props {
-  isMobile: boolean;
-  setModalIsOpen?: any;
-  formFilters?: any;
-  setFormFilters?: any;
-  isFiltered?: boolean;
-  setIsFiltered?: any;
+  isMobile: boolean
+  setModalIsOpen?: any
+  formFilters?: any
+  setFormFilters?: any
+  isFiltered?: boolean
+  setIsFiltered?: any
 }
 
 export const Filter = ({
@@ -21,23 +22,23 @@ export const Filter = ({
   isFiltered,
   setIsFiltered,
 }: Props) => {
-  const { filter } = useContext(FilterArgsContext);
+  const { filter } = useContext(FilterArgsContext)
 
   const statuses = [
     { value: 'Dead', label: 'Dead' },
     { value: 'Alive', label: 'Alive' },
     { value: 'unknown', label: 'Unknown' },
-  ];
+  ]
 
   const genders = [
     { value: 'Female', label: 'Female' },
     { value: 'Male', label: 'Male' },
     { value: 'Genderless', label: 'Genderless' },
     { value: 'unknown', label: 'Unknown' },
-  ];
+  ]
 
   const handleSubmit = (e: any) => {
-    e.preventDefault();
+    e.preventDefault()
     if (
       formFilters.name !== '' ||
       formFilters.status.value !== '' ||
@@ -47,12 +48,12 @@ export const Filter = ({
         name: formFilters.name,
         status: formFilters.status.value,
         gender: formFilters.gender.value,
-      };
-      filter(filters);
-      setIsFiltered(true);
-      setModalIsOpen(false);
+      }
+      filter(filters)
+      setIsFiltered(true)
+      setModalIsOpen(false)
     }
-  };
+  }
 
   return (
     <form
@@ -62,17 +63,17 @@ export const Filter = ({
       <label className={isMobile ? 'mobile-label-container' : ''}>
         <span>Name</span>
         <input
-          className="input-name"
+          className='input-name'
           value={formFilters.name}
-          type="text"
-          placeholder="Search by name..."
+          type='text'
+          placeholder='Search by name...'
           onChange={(e) => setFormFilters({ ...formFilters, name: e.target.value })}
         />
       </label>
       <label className={isMobile ? 'mobile-label-container' : ''}>
         <span>Status</span>
         <Select
-          className="select"
+          className='select'
           value={formFilters.status}
           options={statuses}
           onChange={(option) =>
@@ -89,7 +90,7 @@ export const Filter = ({
       <label className={isMobile ? 'mobile-label-container' : ''}>
         <span>Gender</span>
         <Select
-          className="select"
+          className='select'
           value={formFilters.gender}
           options={genders}
           onChange={(option) =>
@@ -110,5 +111,5 @@ export const Filter = ({
         setFormFilters={setFormFilters}
       />
     </form>
-  );
-};
+  )
+}
