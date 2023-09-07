@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 
+import logo from '../../assets/img/logo.png'
 import { FilterArgsContext } from '../../context/FilterArgsContext'
 import { useMediaQueries } from '../../hooks/useMediaQueries'
 import { CustomButton } from '../CustomButton/CustomButton.component'
@@ -25,7 +26,6 @@ export const NavBar = () => {
   const [isFiltered, setIsFiltered] = useState<boolean>(false)
   const { isMobileScreen } = useMediaQueries()
   const { resetFilters } = useContext(FilterArgsContext)
-  const logo = require('../../assets/img/logo.png')
 
   const goToHomePage = () => {
     resetFilters()
@@ -61,7 +61,6 @@ export const NavBar = () => {
         )}
       </div>
 
-      {/* MODAL */}
       {modalIsOpen && (
         <FilterModal
           setModalIsOpen={setModalIsOpen}
