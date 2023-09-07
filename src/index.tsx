@@ -1,6 +1,18 @@
-import ReactDOM from 'react-dom/client';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './app';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const client = new ApolloClient({
+  uri: 'https://rickandmortyapi.com/graphql',
+  cache: new InMemoryCache(),
+});
 
-root.render(<App />);
+ReactDOM.render(
+  <React.StrictMode>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
