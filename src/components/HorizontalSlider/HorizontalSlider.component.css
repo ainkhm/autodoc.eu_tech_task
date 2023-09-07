@@ -1,0 +1,56 @@
+.slick-slider {
+    cursor: grabbing;
+    padding-bottom: 120px;
+  }
+  
+  .slick-slide > div {
+    margin: 0 15px;
+  }
+  
+  .slick-list {
+    margin: 0 -15px;
+  }
+  
+  .slick-arrow {
+    display: none !important;
+  }
+  
+  .slick-dots {
+    margin-bottom: 90px;
+  }
+  
+  .episode-container-mobile {
+    margin: 0px 28px;
+  }
+  
+  .episode-container-desktop {
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .episode {
+    position: relative;
+    background-color: white;
+    height: 120px;
+    border: 1px solid black;
+    box-shadow: 0 0 20px rgb(0 0 0 / 0.2);
+    border-radius: 8px;
+  }
+  
+  .episode-title {
+    padding: 0 15px;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .episode-date {
+    position: absolute;
+    top: 80px;
+    padding: 0 15px;
+    font-size: 14px;
+  }
+  

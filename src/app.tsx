@@ -1,10 +1,25 @@
-import Sample from './components/sample';
+import './App.css';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { FilterArgsContextProvider } from './context/FilterArgsContext';
 
-/**
- * This is the entry point of the App, feel free to
- * modify this file as you want!
- *
- */
-const App = () => <Sample />;
+import CharactersList from './pages/CharactersList/CharactersList.page';
+import CharacterDetails from './pages/CharacterDetails/CharacterDetails.page';
+
+const App = () => {
+  return (
+    <div>
+      <FilterArgsContextProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="*" element={<Navigate to="/characters" />} />
+            <Route path="/" element={<Navigate to="/characters" />} />
+            <Route path="/characters" element={<CharactersList />} />
+            <Route path="/characters/:characterId" element={<CharacterDetails />} />
+          </Routes>
+        </BrowserRouter>
+      </FilterArgsContextProvider>
+    </div>
+  );
+};
 
 export default App;
