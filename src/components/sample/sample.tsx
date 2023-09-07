@@ -1,3 +1,5 @@
+import React from 'react'
+
 import logo from './logo.svg'
 import { StyledCode, StyledContainer, StyledLogo, StyledTitle } from './sample.style'
 

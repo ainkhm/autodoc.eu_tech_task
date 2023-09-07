@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Filter } from '../Filter/Filter.component'
 import './FilterModal.component.css'
 

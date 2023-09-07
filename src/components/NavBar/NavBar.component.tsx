@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import { FilterArgsContext } from '../../context/FilterArgsContext'
 import { useMediaQueries } from '../../hooks/useMediaQueries'

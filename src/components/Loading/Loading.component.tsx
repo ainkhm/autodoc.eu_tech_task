@@ -1,3 +1,4 @@
+import React from 'react'
 import Sentry from 'react-activity/dist/Sentry'
 import 'react-activity/dist/Sentry.css'
 

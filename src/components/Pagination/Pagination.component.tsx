@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 import { FilterArgsContext } from '../../context/FilterArgsContext'

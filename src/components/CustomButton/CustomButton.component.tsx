@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { ImCross, ImFilter } from 'react-icons/im'
 
 import { FilterArgsContext } from '../../context/FilterArgsContext'

@@ -12,7 +12,6 @@ const mockResetFilters = jest.fn()
 
 beforeEach(() => {
   jest.clearAllMocks()
-
   ;(React.useContext as jest.Mock).mockReturnValue({
     resetFilters: mockResetFilters,
   })
